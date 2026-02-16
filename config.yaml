@@ -1,0 +1,30 @@
+model_list:
+  - model_name: ollama/llama2
+    litellm_params:
+      model: ollama/llama2
+      api_base: http://host.docker.internal:11434
+      api_key: "ollama"
+      provider: ollama
+
+  - model_name: github/copilot
+    litellm_params:
+      model: github/copilot
+      provider: github_copilot
+
+litellm_settings:
+  drop_params: true
+
+# litellm_settings:
+#   set_verbose: True
+#   cache: True 
+#   cache_params:       
+#     type: qdrant-semantic
+#     qdrant_url: http://host.docker.internal:6333
+#     qdrant_username: ""
+#     qdrant_password: ""
+#     similarity_threshold: 0.8
+#     qdrant_collection_name: "litellm-testing"
+
+general_settings:
+  store_model_in_db: true
+  store_prompts_in_spend_logs: true
